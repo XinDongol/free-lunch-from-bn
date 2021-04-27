@@ -118,7 +118,7 @@
 
 <html>
 <head>
-	<title>This is my paper title</title>
+	<title>BN Free Lunch-CMD</title>
 	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
 	<meta property="og:title" content="Free Lunch From BatchNorm: Channel Mean Discrepancy" />
 	<meta property="og:description" content="Paper description." />
@@ -144,52 +144,53 @@
 				<tr>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="https://en.wikipedia.org/wiki/James_J._Gibson">First Author</a></span>
+							<span style="font-size:24px"><a href="http://www.simonxin.com">Xin Dong</a></span>
 						</center>
 					</td>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="https://en.wikipedia.org/wiki/James_J._Gibson">Second Author</a></span>
+							<span style="font-size:24px"><a href="">Junfeng Guo</a></span>
 						</center>
 					</td>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:24px"><a href="https://en.wikipedia.org/wiki/James_J._Gibson">Third Author</a></span>
+							<span style="font-size:24px"><a href="">Mark Ting</a></span>
+						</center>
+					</td>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px"><a href="https://www.eecs.harvard.edu/htk/">H.T. Kung</a></span>
 						</center>
 					</td>
 				</tr>
 			</table>
-			<table align=center width=250px>
+			<!-- <table align=center width=400px>
 				<tr>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href=''>[Paper]</a></span>
+							<span style="font-size:24px"><a href='https://arxiv.org/pdf/2104.11408.pdf'>[Paper]</a></span>
 						</center>
 					</td>
-					<td align=center width=120px>
+					<td align=center width=200px>
 						<center>
-							<span style="font-size:24px"><a href='https://github.com/richzhang/webpage-template'>[GitHub]</a></span><br>
+							<span style="font-size:24px"><a href='https://colab.research.google.com/drive/1ReRVV_f7YBLk3O_zEVAIgnn0gS8zRSIe?usp=sharing'>[Code (temporary)]</a></span><br>
 						</center>
 					</td>
 				</tr>
-			</table>
+			</table> -->
 		</table>
+		<br>
 	</center>
 
 	<center>
 		<table align=center width=850px>
 			<tr>
-				<td width=260px>
+				<td width=380px>
 					<center>
 						<img class="round" style="width:500px" src="./resources/teaser.png"/>
+						<br>
+						<tb>Channel Mean Discrepancy: an embarrassingly simple metric to unifying detect OOD and adversarial samples</tb>
 					</center>
-				</td>
-			</tr>
-		</table>
-		<table align=center width=850px>
-			<tr>
-				<td>
-					This was a template originally made for <a href="http://richzhang.github.io/colorization/">Colorful Image Colorization</a>. The code can be found in this <a href="https://github.com/richzhang/webpage-template">repository</a>.
 				</td>
 			</tr>
 		</table>
@@ -201,17 +202,49 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				This is my abstract.
+				<p>
+				   Detecting <span style="color:Tomato;">out-of-distribution</span> (OOD) and <span style="color:Tomato;">adversarial</span> samples is essential when deploying classification models in real-world applications. We introduce <b>Channel Mean Discrepancy (CMD)</b>, a model-agnostic distance metric for evaluating the statistics of features extracted by classification models, inspired by integral probability metrics. CMD compares the feature statistics of incoming samples against feature statistics estimated from previously seen training samples with minimal overhead. 
+				</p>
+				<p>
+				   We experimentally demonstrate that CMD magnitude is significantly smaller for legitimate samples than for OOD and adversarial samples. We propose a simple method to reliably differentiate between legitimate samples from OOD and adversarial samples using CMD, requiring only a single forward pass on a pre-trained classification model per sample. We further demonstrate how to achieve single image detection by using a lightweight model for channel sensitivity tuning, an improvement on other statistical detection methods. 
+				</p>
+				<p>
+				   Preliminary results show that our simple yet effective method outperforms several state-of-the-art approaches to detecting OOD and adversarial samples across various datasets and attack methods with high efficiency and generalizability.
+				</p>
 			</td>
 		</tr>
 	</table>
 	<br>
 
 	<hr>
-	<center><h1>Talk</h1></center>
+
+	<table align=center width=550px>
+		<center><h1>Paper and Supplementary Material</h1></center>
+		<tr>
+			<td><a href="https://arxiv.org/pdf/2104.11408.pdf"><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
+			<td><span style="font-size:14pt">X. Dong, J. Guo, M. Ting, H.T. Kung<br><br>
+				<b>Lightweight Detection of Out-of-Distribution and Adversarial Samples via Channel Mean Discrepancy</b><br><br>
+				(hosted on <a href="https://arxiv.org/pdf/2104.11408.pdf">ArXiv</a>)<br>
+				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
+				<span style="font-size:4pt"><a href="https://arxiv.org/pdf/2104.11408.pdf"><br></a>
+				</span>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<!--<table align=center width=600px>
+		<tr>
+			<td><span style="font-size:14pt"><center>
+				<a href="./resources/bibtex.txt">[Bibtex]</a>
+			</center></td>
+		</tr>
+	</table> -->
+	<hr>
+	<!-- <center><h1>Talk</h1></center>
 	<p align="center">
 		<iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
-	</p>
+	</p> 
 
 	<table align=center width=800px>
 		<br>
@@ -222,9 +255,18 @@
 			</center>
 		</tr>
 	</table>
-	<hr>
+	<hr>-->
 
 	<center><h1>Code</h1></center>
+
+	
+
+	<table align=center width=800px>
+		<tr><center>
+			<span style="font-size:28px">&nbsp;<a href="https://colab.research.google.com/drive/1ReRVV_f7YBLk3O_zEVAIgnn0gS8zRSIe?usp=sharing" target="_parent\"><img src="https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>
+			</center>
+		</span>
+	</table>
 
 	<table align=center width=420px>
 		<center>
@@ -238,7 +280,7 @@
 		<tr>
 			<td align=center width=400px>
 				<center>
-					<td><img class="round" style="width:450px" src="./resources/method_diagram.png"/></td>
+					<td><img class="round" style="width:450px" src="./resources/code.png"/></td>
 				</center>
 			</td>
 		</tr>
@@ -247,41 +289,61 @@
 		<center>
 			<tr>
 				<td>
-					Short description if wanted
+					We are happy to release detailed codes to reproduce results in the paper upon acceptance.
 				</td>
 			</tr>
 		</center>
 	</table>
-	<table align=center width=800px>
-		<br>
-		<tr><center>
-			<span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
-			</center>
-		</span>
-	</table>
-	<br>
-	<hr>
-	<table align=center width=450px>
-		<center><h1>Paper and Supplementary Material</h1></center>
-		<tr>
-			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
-			<td><span style="font-size:14pt">F. Author, S. Author, T. Author.<br>
-				<b>Creative and Descriptive Paper Title.</b><br>
-				In Conference, 20XX.<br>
-				(hosted on <a href="">ArXiv</a>)<br>
-				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
-				<span style="font-size:4pt"><a href=""><br></a>
-				</span>
-			</td>
-		</tr>
-	</table>
+
 	<br>
 
-	<table align=center width=600px>
+
+	<hr>
+	<center><h1>Results</h1></center>
+	<br>
+	<center>
+		<table align=center width=850px>
+			<tr>
+				<td width=380px>
+					<center>
+						<img class="round" style="width:850px" src="./resources/method_tab.png"/>
+						<!--<br>
+						<tb>Channel Mean Discrepancy: an embarrassingly simple metric to unifying detect OOD and adversarial samples</tb> -->
+					</center>
+				</td>
+			</tr>
+		</table>
+	</center>
+
+	<center>
+		<table align=center width=850px>
+			<tr>
+				<td width=380px>
+					<center>
+						<img class="round" style="width:450px" src="./resources/method_distance.png"/>
+					</center>
+				</td>
+			</tr>
+		</table>
+	</center>
+	<br>
+
+
+	<table align=center width=850px>
 		<tr>
-			<td><span style="font-size:14pt"><center>
-				<a href="./resources/bibtex.txt">[Bibtex]</a>
-			</center></td>
+			<td width=400px>
+				<left>
+						Comparison of MMD against CMD when using a pretrained model and randomly initialized model as the mapping
+function. All three methods are tested to discriminate the same
+legitimate and adversarial batches (batch size = 8) on CIFAR10. The pre-trained model and the random model have the same
+architecture, ResNet-34. (a) MMD: we conduct the two-sample
+hypothesis testing with MMD and Fisher’s permutation following [5, 14]. The y-axis is the predictive probability of being an
+adversarial batch. (b) CMD (Pre-trained Model): The novel distance metric defined in Eq. (6), where the mapping function Φc
+is instanced as the pre-trained classification model. The y-axis is
+normalized summed CMDs. (c) CMD (Random Model): We validate the necessity of pre-trained model in (b) by replacing it with
+the same model but with random weights.
+				</left>
+			</td>
 		</tr>
 	</table>
 
@@ -293,7 +355,7 @@
 			<td width=400px>
 				<left>
 					<center><h1>Acknowledgements</h1></center>
-					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
+					The style of webpage is adapted from <a href="https://github.com/richzhang/webpage-template">here</a>.
 				</left>
 			</td>
 		</tr>
